@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Control Dashboard</title>
+    
+    <style>
+        /* Gruvbox theme styles */
+        body {
+            background-color: #282828;
+            color: #ebdbb2;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Add more Gruvbox styles as needed */
+        
+        .dashboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .device-section {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 5px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #458588;
+            color: #ebdbb2;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #076678;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <h1>ASU I.F. Slice control</h1>
+
+
+    </br> 
+    <!-- Digital Attenuator Control Section -->
+    <div class="device-section" id="attenuator-section">
+        <h2>Digital Attenuator Control</h2>
+        <label for="rfout_atten_val">Drive(RFOUT) Attenuator Value:</label>
+        <input type="text" id="rfout_atten_val" placeholder="0 to 31.75 dB of attenuation">
+
+        <label for="rfin_atten_val">Sense(RFIN) Attenuator Value:</label>
+        <input type="text" id="rfin_atten_val" placeholder="0 to 31.75 dB of attenuation">
+	</br>
+	<button onclick="setAttenuatorValues()">Set Attenuation</button>
+    </div>
+
+    </br>
+
+    <!-- Synthesizer Control Section -->
+    <div class="device-section" id="synthesizer-section">
+        <h2>Synthesizer Control</h2>
+        
+        <!-- Input fields for synthesizer -->
+        <label for="synthesizer-frequency">LO Frequency:</label>
+        <input type="text" id="synthesizer-frequency" placeholder="Enter LO frequency">
+	<label for="synthesizer-power">RF level:</label>
+        <input type="text" id="synthesizer-power" placeholder="RF Power Level">
+
+	</br>
+		
+        <!-- Repeat for additional inputs -->
+        <!-- You can use a loop to generate these if needed -->
+
+        <button onclick="setSynthesizerParameters()">Set Parameters</button>
+    </div>
+
+
+</div>
+
+<!-- Include your JavaScript for device control logic -->
+<script >
+	function setAttenuatorValues(){
+		x = document.getElementById('rfout_atten_val')
+		y = document.getElementById('rfin_atten_val')
+		x.value = ""
+		y.value = ""
+	}
+</script>
+</body>
+</html>
+

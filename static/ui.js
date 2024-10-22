@@ -13,4 +13,18 @@ function setAttenuatorValues(){
   
   })
 }
+function setValon(){
+  var power = document.getElementById('synthesizer-power')
+  var freq = document.getElementById('synthesizer-frequency')
+  console.log(power.value)
+  console.log(freq.value)
+  var response = fetch("/synth/",  {
+    method: "POST",
+    body: JSON.stringify({power: power.value, frequency: freq.value}),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  
+  })
+}
 

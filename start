@@ -1,0 +1,2 @@
+#!/bin/bash
+flask --app app run --debugger --reload -h localhost -p 50080

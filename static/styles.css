@@ -1,0 +1,102 @@
+/* styles.css */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.modal.hide {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.modal-content.styled.fail {
+    background-color: #1e1e1e; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    padding: 20px;
+    border-radius: 5px;
+    width: 450px;
+    margin: 20px auto 0 auto;
+    text-align: left;
+    border: 1px solid #e06c75; /* Border color similar to warning orange */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    font-family: monospace; /* To match terminal-like styling */
+}
+
+.modal-content.styled.success {
+    background-color: #1e1e1e; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    padding: 20px;
+    border-radius: 5px;
+    width: 450px;
+    margin: 20px auto 0 auto;
+    text-align: left;
+    border: 1px solid #6ce095; /* Border color similar to warning orange */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    font-family: monospace; /* To match terminal-like styling */
+}
+
+/* Icon and timestamp styling */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fail-header{
+    color: #e06c75;  /* Warning orange for icon */
+}
+.icon-fail {
+    font-size: 2.0rem;
+    color: #e06c75;  /* Warning orange for icon */
+}
+.icon-success {
+    font-size: 2.0rem;
+    color: #6ce095;  /* Warning orange for icon */
+}
+.timestamp {
+    font-size: 0.9rem;
+    color: #c0c0c0; /* Lighter gray for timestamp */
+}
+
+/* Highlighted text (e.g., command text) */
+.highlight-fail{
+    color: #e06c75; /* Red color for emphasis (similar to the command) */
+}
+.highlight-success{
+    color: #6ce095; /* Red color for emphasis (similar to the command) */
+}
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

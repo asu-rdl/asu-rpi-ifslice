@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Device Control Dashboard</title>
-    
+    <link rel="stylesheet" href="static/styles.css">
+
     <style>
         /* Gruvbox theme styles */
-        body {
+        .body-gruv {
             background-color: #282828;
             color: #ebdbb2;
             font-family: 'Courier New', monospace;
@@ -49,7 +50,7 @@
         }
     </style>
 </head>
-<body>
+<body class="body-gruv">
 
 <div class="dashboard-container">
     <h1>ASU I.F. Slice control</h1>
@@ -88,9 +89,38 @@
         <button onclick="setValon()">Set Parameters</button>
     </div>
 
+    <button id="openStyledModalBtn">Show fail Modal</button>
+    <button id="openSuccessBtn">Show success Modal</button>
+    <!-- Styled Modal -->
+    <div id="styledModal" class="modal">
+        <div class="modal-content styled fail">
+            <span class="close" onclick="closeModal('styledModal')">&times;</span>
+            <div class="modal-header">
+                <span class="icon-fail">Error ⚠️</span>
+                <span class="timestamp"></span>
+            </div>
+            <p>The attenuation settings are invalid</p>
+            <!-- <p>Run <span class="highlight-fail">:Lazy update</span> again to get these updates.</p> -->
+        </div>
+    </div>
+
+        <!-- success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content styled success">
+            <span class="close" onclick="closeModal('successModal')">&times;</span>
+            <div class="modal-header">
+                <span class="icon-success">Success ✓</span>
+                <span class="timestamp"></span>
+            </div>
+            <!-- <p>The attenuation settings are invalid</p> -->
+            <!-- <p>Run <span class="highlight-fail">:Lazy update</span> again to get these updates.</p> -->
+        </div>
+    </div>
 
 </div>
+    
 
+<script src="static/scripts.js"></script>
 <!-- Include your JavaScript for device control logic -->
 <script src='static/ui.js'></script> 
 </body>

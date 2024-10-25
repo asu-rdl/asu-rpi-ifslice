@@ -1,2 +1,2 @@
 #!/bin/bash
-flask --app app run --debugger --reload -h localhost -p 50080
+flask --app app run --debugger --reload -h pifslice -p 50080

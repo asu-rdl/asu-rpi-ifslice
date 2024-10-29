@@ -22,8 +22,8 @@ def handle_attenuation():
     try:
         rfout = float(raw_rfout)
         rfin = float(raw_rfin)
-        transceiver.set_atten(1, rfout)
-        transceiver.set_atten(2, rfin)
+        print(transceiver.set_atten(1, rfout))
+        print(transceiver.set_atten(2, rfin))
     except ValueError:
         return "BAD FORMAT", 400
     print(rfout)

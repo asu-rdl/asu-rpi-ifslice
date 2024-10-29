@@ -54,8 +54,6 @@
 
 <div class="dashboard-container">
     <h1>ASU I.F. Slice control</h1>
-
-
     </br> 
     <!-- Digital Attenuator Control Section -->
     <div class="device-section" id="attenuator-section">
@@ -65,8 +63,8 @@
 
         <label for="rfin_atten_val">Sense(RFIN) Attenuator Value:</label>
         <input type="text" id="rfin_atten_val" placeholder="0 to 31.75 dB of attenuation">
-	</br>
-	<button onclick="setAttenuatorValues()">Set Attenuation</button>
+        </br>
+	    <button id="btn_setatten">Set Attenuation</button>
     </div>
 
     </br>
@@ -74,32 +72,24 @@
     <!-- Synthesizer Control Section -->
     <div class="device-section" id="synthesizer-section">
         <h2>Synthesizer Control</h2>
-        
-        <!-- Input fields for synthesizer -->
         <label for="synthesizer-frequency">LO Frequency (MHz):</label>
         <input type="text" id="synthesizer-frequency" placeholder="Enter LO frequency">
-	<label for="synthesizer-power">RF level:</label>
+	    <label for="synthesizer-power">RF level:</label>
         <input type="text" id="synthesizer-power" placeholder="RF Power Level">
-
-	</br>
+	    </br>
 		
-        <!-- Repeat for additional inputs -->
-        <!-- You can use a loop to generate these if needed -->
 
         <button onclick="setValon()">Set Parameters</button>
     </div>
-
-    <button id="openStyledModalBtn">Show fail Modal</button>
-    <button id="openSuccessBtn">Show success Modal</button>
-    <!-- Styled Modal -->
-    <div id="styledModal" class="modal">
+    <!-- fail Modal -->
+    <div id="failModal" class="modal">
         <div class="modal-content styled fail">
-            <span class="close" onclick="closeModal('styledModal')">&times;</span>
+            <span class="close" onclick="closeModal('failModal')">&times;</span>
             <div class="modal-header">
                 <span class="icon-fail">Error ⚠️</span>
                 <span class="timestamp"></span>
             </div>
-            <p>The attenuation settings are invalid</p>
+            <span id="YOUFUCKEDUP">The attenuation settings are invalid</span>
             <!-- <p>Run <span class="highlight-fail">:Lazy update</span> again to get these updates.</p> -->
         </div>
     </div>
@@ -120,8 +110,7 @@
 </div>
     
 
-<script src="static/scripts.js"></script>
-<!-- Include your JavaScript for device control logic -->
+<!-- <script src="static/scripts.js"></script> -->
 <script src='static/ui.js'></script> 
 </body>
 </html>

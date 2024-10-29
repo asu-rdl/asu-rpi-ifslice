@@ -1,2 +1,3 @@
 #!/bin/bash
+source ~/asu-rpi-ifslice/.venv/bin/activate
 flask --app app run --debugger --reload -h pifslice -p 50080

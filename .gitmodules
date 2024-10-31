@@ -2,5 +2,5 @@
 	path = transceiver321
 	url = https://github.com/asu-rdl/transceiver321
 [submodule "valon5009_python"]
-	path = valon5009_python
+	path = libvalon
 	url = https://github.com/asu-rdl/valon5009_python.git

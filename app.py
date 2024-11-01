@@ -38,8 +38,6 @@ def handle_synthesizer():
     try:
         req = request.json
         f = float(req['frequency'])
-        x = req['fakedata']
-        print(type(x))
         w = float(req['power'])
 
         if f < 20.0:

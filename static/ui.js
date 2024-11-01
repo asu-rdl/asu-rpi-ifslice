@@ -27,8 +27,6 @@ synth_freq_elem.addEventListener("keypress", function(event){
       btn_setsynth.click();
     }
   });
-
-
 synth_power_elem.addEventListener("keypress", function(event){
   if (event.key === "Enter"){
       event.preventDefault();

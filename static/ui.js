@@ -92,6 +92,7 @@ function setAttenuatorValues(){
     }
   
   });
+  console.log(response)
   //Check if positive response
   showModal("successModal");
 }
@@ -108,5 +109,7 @@ function setValon(){
     }
   
   });
+  console.log(response)
+  showModal("successModal")
 }
 
